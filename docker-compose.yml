@@ -1,0 +1,14 @@
+joomla:
+        ports:
+        - 80
+        - 443
+        - 3306:3306
+        image: joomla  
+        volumes:
+        - /home/carl/data/joomla/app:/var/www/html
+        - /home/carl/data/joomla/mysql:/var/lib/mysql
+        environment:
+        - VIRTUAL_HOST=cms.name.com,www.cms.name.com # to use with a proxy
+        - MYSQL_PASS=password1
+        - JOOMLA_PASS=password2
+  

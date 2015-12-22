@@ -11,8 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 RUN apt-get -y clean
 
 # Download Joomla
-ADD https://github.com/joomla/joomla-cms/releases/\
-download/3.4.1/Joomla_3.4.1-Stable-Full_Package.zip /tmp/
+ADD https://github.com/joomla/joomla-cms/releases/download/3.4.7/Joomla_3.4.7-Stable-Full_Package.zip /tmp/
 
 # Remove previous files
 RUN rm -rf /var/www/html/*
@@ -20,8 +19,8 @@ RUN rm -rf /var/www/html/*
 # Extract Joomla
 RUN \
   cd /tmp && ls -la && \
-  unzip -d /tmp/joomla/ Joomla_3.4.1-Stable-Full_Package.zip && \
-  rm Joomla_3.4.1-Stable-Full_Package.zip
+  unzip -d /tmp/joomla/ Joomla_3.4.7-Stable-Full_Package.zip && \
+  rm Joomla_3.4.7-Stable-Full_Package.zip
 
 # Add scripts and make them executable.
 COPY create_mysql_users.sh /create_mysql_users.sh
