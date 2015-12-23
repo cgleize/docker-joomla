@@ -1,5 +1,5 @@
-FROM reinblau/lamp
-MAINTAINER cgleize <cginc@gmx.fr> 
+FROM dell/lamp-base:1.2
+MAINTAINER Dell Cloud Market Place <Cloud_Marketplace@dell.com>
 
 # Update existing packages.
 RUN apt-get update 
@@ -7,7 +7,7 @@ RUN apt-get update
 # Install packages
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get -y install \
-        unzip
+        unzip php5-gd
 RUN apt-get -y clean
 
 # Download Joomla
